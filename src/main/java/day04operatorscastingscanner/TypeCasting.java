@@ -12,9 +12,9 @@ public class TypeCasting {
 
 
         Note2: Converting larger data types into smaller ones is too risky.
-         Data loss can occur...Bcs of that Java don't do this automatically...
+        Data loss can occur...Bcs of that Java don't do this automatically...
         This is under responsibility of developers...
-         This operation is "Explicit Narrowing"...*/
+        This operation is "Explicit Narrowing"...*/
 
         //Example: create a data in byte, and assign into int.... (auto widening)
         byte age = 19;//created in smaller data type

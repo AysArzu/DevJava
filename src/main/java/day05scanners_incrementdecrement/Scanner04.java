@@ -21,7 +21,7 @@ public class Scanner04 {
         System.out.println("Multiplication= " + (firstNumber * secondNumber));
         System.out.println("Division= " + (firstNumber / secondNumber));
 
-        System.out.println("Division= " + String.format("%.2f",(firstNumber / secondNumber)));
+        System.out.println("Division= " + String.format("%.2f",firstNumber / secondNumber));
         System.out.println("Division= " + String.format("%.3f",(firstNumber / secondNumber)));
 
 
