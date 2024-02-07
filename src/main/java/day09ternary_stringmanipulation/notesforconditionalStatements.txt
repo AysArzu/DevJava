@@ -1,0 +1,71 @@
+
+        CONDITIONAL STATEMENTS
+        1)  IF Statements
+        //We use conditional statements in decision making...
+        if(condition/boolean) {body to execute when condition is true}
+        //we specify one single scenario or condition in if statement
+        //but for other possibilities; we can use else part connected with if statement
+            //if - else
+         if(condition/boolean) {
+                        //body to execute when condition is true
+         }else{
+                         //when if condition is false, else body is executed as an alternative...
+         }
+            // what if I want to specify many scenarios...
+            String x = "rainy"; // cloudy, sunny, snowy, windy, funny
+            if(x.equals("rainy")){
+                    //stay at home
+            }else if(x.equals("cloudy")){
+                    //go to your friend
+            } else if(x.equals("snowy")){
+                    //go to skiing
+            }else{
+                    //study java at library
+            }
+        // We learned: If - If else - If, else If, else
+        //You are a customer in our bank:
+        Based on your gender you will be directed a department
+            and your age will be asked; based on your age and income
+            Interest rate will be defined by the system....
+        Male...
+            Age > 18 and Age < 60 => income > 10K per month
+            interest rate will be 5%
+        Female.....
+                 Age > 18 and Age < 55 => income > 8K per month
+                            interest rate will be 3%
+                    If(gender.equals("Male")){
+                                       if(age>18 && age < 60 && income > 10000){
+                                                 //you can use credit with 5% interest rate
+                                       }else{
+                                            //not eligible for credit
+                                       }
+                    }else if(gender.equals("Female")){
+                                       if(age>18 && age < 55 && income > 8000){
+                                            //you can use credit with 3% interest rate
+                                       }else{
+                                             //not eligible for credit
+                                       }
+                    }else{
+                            //Undefined gender or age...
+                    }
+                    2) Switch Case (Switch Statement)
+                    //we can use Switch in decision making with a simpler syntax...
+                    String lang = "java"; //c#, apex, c++, javascript, css, html
+                    Switch (variable){
+                        case "java": //backend developer;
+                        break;
+                        case "c#"  : //.net developer;
+                        break;
+                        case "apex": //salesforce developer;
+                        break;
+                        case "javascript", "css", "html" : //frontend developer;
+                        break;
+                        default : //Invalid language
+                    }
+       //If we don't use "break" keyword for cases, java will print all the following statements after matching case...
+       // We can not use float, double, long, boolean data types with Switch...
+            3) Ternary Statement
+        Condition ? (part for true) : (part for false);
+           int x = 3;
+            String result  =  x < 10 ? "Digit" : "Two digits";
+            System.out.println(result);
