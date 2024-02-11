@@ -17,7 +17,7 @@ public class StringManipulation03 {
 
         laptop = laptop.replace("$", "");
         System.out.println(laptop);
-        //use Double wrapper class to access valueOf method.. dont use primitive double
+        //use Double wrapper class to access valueOf method.. don't use primitive double
 
         Double totalPrice = Double.valueOf(tv) + Double.valueOf(laptop);
 
@@ -30,8 +30,15 @@ public class StringManipulation03 {
 
         //trim()
         // split()
-
-
+        String name = "    Mike   Tyson   ";
+        String realName = name.trim().replaceAll("\\s", " ");
+        String arr[] = realName.split("\\s+");
+        String nameInitial = arr[0];
+        String lastNameInitial = arr[1];
+        System.out.println("lastNameInitial = " + lastNameInitial);
+     // String initials = String.valueOf(nameInitial.charAt(0)) + String.valueOf(lastNameInitial.charAt(0));
+        String initials =""+ nameInitial.charAt(0)+lastNameInitial.charAt(0);
+        System.out.println(initials);
     }
 
 }
