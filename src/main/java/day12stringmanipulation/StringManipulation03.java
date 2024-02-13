@@ -11,14 +11,35 @@ public class StringManipulation03 {
         //Note: check the difference between isEmpty() and isBlank()
 
         String pwd = "  abc  ";
-        boolean isEmpty = pwd.isEmpty();
-        boolean isContainSpace = pwd.replaceAll("\\S", "").isBlank();
+        boolean first = !pwd.isEmpty(); //returns true when it is like "" ....
+        System.out.println("first = " + first);
+
+        boolean second = !pwd.isBlank();
+        System.out.println("second = " + second);
+
+        boolean third = pwd.trim().equals(pwd);
+        System.out.println("third = " + third);
+
+        if(!first){
+            System.out.println("Password can not be empty!");
+        }
+
+        if(!second){
+            System.out.println("There must be some characters other than spaces!");
+        }
+
+        if (!third){
+            System.out.println("There should not be leading and ending spaces!");
+        }
+
 
 /*
-        String pass = "    ";
-        boolean isEmpty = pass.isEmpty(); //counts spaces and returns false...
-        System.out.println("isEmpty = " + isEmpty); //false => not empty
+       String pass = "    ";
+       boolean isEmpty = pass.isEmpty(); //counts spaces and returns false...
+       System.out.println("isEmpty = " + isEmpty); //false => not empty
+
         boolean isBlank = pass.isBlank(); //does not count spaces and return true
         System.out.println("isBlank = " + isBlank); //true => it is Blank */
+
     }
 }
