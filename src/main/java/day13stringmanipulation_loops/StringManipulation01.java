@@ -1,4 +1,4 @@
-package day13;
+package day13stringmanipulation_loops;
 
 public class StringManipulation01 {
     public static void main(String[] args) {
