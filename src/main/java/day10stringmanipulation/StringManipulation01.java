@@ -2,81 +2,63 @@ package day10stringmanipulation;
 
 public class StringManipulation01 {
     public static void main(String[] args) {
-        //String data types:is used to store sentences, words, symbols etc...
+        //Example 2: Print initials of firstname and lastname of names entered by user...
+        // "    Mike   Tyson   "  => MT
 
-        //Example: Check the given string and calculate total number of characters in string....
-        String s = "Java is so easy!";
-        int length = s.length();
-        System.out.println("Length of sentence is " + length);//Length of sentence is 16
+        //trim() => removes spaces from beginning and ending of string...does not touch the spaces in between
+        // split()
 
-        //*************************************************************************************
-       /* in String variables, all the characters location in an index number...
-        Index is zero-based characteristic...
-        First character is in index 0 everytime...
-        And index number increase from left to right one by one*/
+        String name = "    Mike Tyson   ";
 
-        //Example: in the String above, fetch first and last character then print on the console
-        //use charAt() method to fetch characters by using index...
-        char firstCharacter = s.charAt(0);
+        char initialOfFirstName = name.trim().charAt(0); //M
+        System.out.println("initial Of FirstName= " + initialOfFirstName);
+
+        //initial of lastname    "Mike Tyson" => [Mike, Tyson] => Tyson => T
+        char initialOfLastName = name.trim().split(" ")[1].charAt(0);
+        System.out.println("initial Of LastName = " + initialOfLastName); //T
+
+        System.out.println("" + initialOfFirstName + initialOfLastName); //MT
+        // System.out.println(initialOfFirstName + "" + initialOfLastName); //MT
+        //without starting with string quotation, java will addition ASCII values from initials.
+        // that is characteristic of charAt() method...
+
+        //Example: Fetch domain name from the given email...
+        // ==> gmail
+        String email = "abcd@gmail.com";
+        //when we split a data, specified character in split method is removed as well.
+        // fullstop is used in split this way "\\."
+
+        String domain = email.split("@")[1].split("\\.")[0];
+        System.out.println("domain = " + domain); //domain = gmail
 
 
-        char last=s.charAt(length-1);
-        char lastCharacter = s.charAt(s.length() - 1);
+        //2. way:
 
-        System.out.println("First Character = " + firstCharacter);
-        System.out.println("Last Character = " + lastCharacter);
+        //indexOf() =>  it will give me first occurrence of the specified character
+        //
 
-        //Example: In the following string, replace "money" with "dollars"....
+        String email1 = "abcd@gmail.com";
+        int startingIndex = email1.indexOf("@") + 1;
+        // System.out.println("startingIndex = " + startingIndex); //5
+        int endingIndex = email1.indexOf("."); //domain1 = gmail
+        // System.out.println("endingIndex = " + endingIndex); //10
 
-        String str = "Learn java earn 3456 money";
+        String domain1 = email1.substring(startingIndex, endingIndex);
+        System.out.println("domain1 = " + domain1);
 
-        String newstr = str.replace("money","dollars");
-        System.out.println("newstr = " + newstr);//newstr = Learn java earn 3456 dollars
 
-        //Example 2: Re,ove all the characters of "e" from the String above...
-        String removedE =str.replaceAll("e","");
-        System.out.println("removedE = " + removedE);//removedE = Larn java arn 3456 mony
+        //most dynamic way:
+        //lastIndexOf() =>  it will give me last occurrence of the specified character
+        //
+        String email2 = "ab.cd@gmail.com";
 
-        /*
-        To define a group of data, we use Regular Expressions in java
-        In short, we name REGEX...
-        There are so many REGEX, but we will learn most common ones...
+        int startingIndexx = email2.indexOf("@") + 1;
+        // System.out.println("startingIndex = " + startingIndex); //
+        int endingIndexx = email2.lastIndexOf("."); //domain1 = gmail
+        // System.out.println("endingIndex = " + endingIndex); //
 
-         1)All digits ==> [0-9]
-         2)All lowercase letters ==> [a-z]
-         3)All uppercase letters ==>[A-Z]
-         4)All the letters ==>[a-zA-Z]
-         5)All the letters and digits ==>[a-zA-Z0-9]
-         6)All punctuation ==> \\p{Punct}--> noktalama isaretleri ,./? gibi
-         7)All the vowels ==> [aeiouAEIOU]
-             All a, x, y characters ==>[axy]
-             From A -G and a-g ==>[A-Ga-g]
+        String domain2 = email2.substring(startingIndexx, endingIndexx);
+        System.out.println("domain2 = " + domain2);
 
-        //exclusive Regex
-        It means "other than" or "except"
-        8)All the characters other than digits ==>[^0-9]
-        9)All the characters other than lowercase letters ==>[^a-z]
-        10)All the characters other than  letters ==>[^a-zA-Z]
-        11)All the characters other than space ==>[^ ]
-
-        in the following part, there is no square bracket
-        12) Only space character ==> \\s
-        13)Expect space character ==> \\S
-        14)Only digits ==>\\d
-        15)Expect digits ==>\\D
-
-         */
-        //Example 3: in the given String above convert all digits into "*"
-        //replaceAll(x,y) ==>first parameter for regex that we wanna remove, second one is to put something instead.
-        String strWithStar = str.replaceAll("\\d","*");
-        System.out.println("strWithStar = " + strWithStar);//strWithStar = Learn java earn **** money
-
-        //Example 4: check the given string and calculate number of digits in it...
-        String strDigits = str.replaceAll("\\D","");
-        int size=strDigits.length();
-        System.out.println("size = " + size);//size = 4
-        //   int numOfDigits = str.replaceAll("[^0-9]", "").length();
-        // I removed all the characters other than digits,
-        // and counted number of characters in remaining part ("3456") with length()
     }
 }
