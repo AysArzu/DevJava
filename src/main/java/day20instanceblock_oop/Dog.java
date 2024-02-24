@@ -1,7 +1,9 @@
 package day20instanceblock_oop;
 
-public class Dog {
-    public void bark(){
+public class Dog extends Mammal {
+    public void bark() {
         System.out.println("Dogs bark...");
     }
+
+
 }
