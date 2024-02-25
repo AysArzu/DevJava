@@ -89,7 +89,7 @@ public class Animal { //public final class Animal ==> Animal'in child'i olmaz
 
     Sonuc: "Final" kelimesi, programcılara kodlarını daha güvenli ve öngörülebilir hale getirme, optimizasyon sağlama
     veya belirli davranışları zorlamada yardımcı olmak için kullanılır.*/
-
+    //public final class Animal ==> Animal'in child'i olmaz. Final class kısır classtir
 
     public void eat(){
         final double pi = 3.14;
