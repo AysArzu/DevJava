@@ -3,7 +3,7 @@ package day25maps;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Map02 {
+public class Maps02 {
     public static void main(String[] args) {
 
         HashMap<String, Integer> stdNames = new HashMap<>();

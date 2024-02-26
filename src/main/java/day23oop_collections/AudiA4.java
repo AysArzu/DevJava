@@ -1,7 +1,8 @@
 package day23oop_collections;
 
-public class Audi implements Motor, Fren, Klima {
-     /*
+public class AudiA4 implements Motor, Klima, Fren {
+
+    /*
     a) interface’leri parent yapmak icin ‘implements’ keyword’u child icinde kullanilir
 
     b) extends kullanilmaz cunku bu iki class arasinda kullanilir
@@ -13,9 +14,6 @@ public class Audi implements Motor, Fren, Klima {
 
     e) Class icinde access modifier yazilmazsa default kabul edildiginden, mecbur public yazariz
     */
-    //override mecbur oldugu icin, ustune override yazmayiz
-    //Burasi normal class, o yuzden void onune public yazariz yoksa default kabul eder
-
     //Motor interface'inden override edilenler
     public void eco(){
         System.out.println("Audi A4 ekonomik motor kullanir");
@@ -39,6 +37,11 @@ public class Audi implements Motor, Fren, Klima {
     }
     public void esp(){
         System.out.println("Audi A4 esp fren sistemi kullanir");
+    }
+    //Odev: AudiS5 class'i olusturup, interface'lere child yapip, gerekli override'lari yapiniz
+
+    public void run(){
+        System.out.println("Audi A4 havayastigi calistirir");
     }
 
 }

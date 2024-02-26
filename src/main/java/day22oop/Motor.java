@@ -23,5 +23,4 @@ public interface Motor {
     void turbo();
     void gas();
 
-
 }

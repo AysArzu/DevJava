@@ -2,9 +2,8 @@ package day25maps;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Set;
 
-public class Map03 {
+public class Maps03 {
     public static void main(String[] args) {
         //Meshur bir interview sorusu
         //ornek 1: Size verilen bir String'deki her kelimenin, o String'de kac defa kullanildigini

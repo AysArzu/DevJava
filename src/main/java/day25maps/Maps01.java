@@ -25,40 +25,43 @@ public class Maps01 {
 
         //Sadece key degerini nasil alirim
         //keySet(): Map’teki tüm key’lerin bir set’ini döndürür.Set’in sırası rastgeledir.
-        Set<String> keyTarafi =myMap.keySet();
+        Set<String> keyTarafi = myMap.keySet();
 
-            System.out.println(keyTarafi);
+        System.out.println(keyTarafi);
 
         //Sadece ‘value’ degerlerini nasil alabiliriz?
         //values():Map’teki tüm value’ların bir collection’ını döndürür.Collection’ın sırası rastgeledir.
-        Collection<Integer> valueTarafi =myMap.values();
+        Collection<Integer> valueTarafi = myMap.values();
         System.out.println(valueTarafi);
 
         //get(): Bir key’e karşılık gelen değeri döndürür.key verirsiniz value’sunu getirir
 
-        Integer yas= myMap.get("Ali Can");
+        Integer yas = myMap.get("Ali Can");
         System.out.println(yas);//25
-        Integer yas1= myMap.get("Ali can");
+        Integer yas1 = myMap.get("Ali can");
         System.out.println("yas1 = " + yas1);//null
 
-//Ornek 1: myMap’deki kisilerin yaslarinin ortalamasi nedir?
-        int toplam=0;
-Collection <Integer> yaslar = myMap.values();
+        //Ornek 1: myMap’deki kisilerin yaslarinin ortalamasi nedir?
+        int toplam = 0;
+        Collection<Integer> yaslar = myMap.values();
         for (Integer w : yaslar) {
-            toplam+=w;
+            toplam += w;
         }
-        System.out.println(toplam/yaslar.size());
+        System.out.println(toplam / yaslar.size());
 
         //entrySet() metodu, HashMap’in tüm degerlerini içeren bir Set döndürür.
         // Dongu gibi ayri satirlarda yazdirir.Cunku Loop’lar direkt Map’ler ile kullanilamaz.
         //Bu yuzden ozel method gelistirilmis. Set’in icinde Map yapisi saklanir.
 
         System.out.println(myMap);//{Fatma Yilmaz=19, Ali Can=25, Veli Han=18, Ayse Arzu=15}
-        Set<Map.Entry<String, Integer> >myEntrySet = myMap.entrySet();
+        Set<Map.Entry<String, Integer>> myEntrySet = myMap.entrySet();
         System.out.println(myEntrySet);
         for (Map.Entry<String, Integer> w : myEntrySet) {
             System.out.println(w);
-        }
+        }//Ayse Arzu=15
+         //Fatma Yilmaz=19
+        //Ali Can=25
+        //Veli Han=18
 
         //Ornek 2: Verilen Map’deki kisi isimlerinin character sayisi ile yaslarinin toplamini bulunuz.
         //Java’da Map.Entry kullanarak bir Set üzerinde loop yapabilir ve
@@ -68,12 +71,12 @@ Collection <Integer> yaslar = myMap.values();
         kisiler.put("Ali", 3);
         kisiler.put("Can", 5);
         kisiler.put("Ayse", 2);
-        int sum=0;
-   Set<Map.Entry<String, Integer>> mySet = kisiler.entrySet();
+        int sum = 0;
+        Set<Map.Entry<String, Integer>> mySet = kisiler.entrySet();
         for (Map.Entry<String, Integer> w : mySet) {
-            sum+=w.getKey().length()+w.getValue();
+            sum += w.getKey().length() + w.getValue();
 
         }
-        System.out.println(sum);
+        System.out.println(sum);//20
     }
 }
